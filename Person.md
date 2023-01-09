@@ -6,7 +6,7 @@
   function person() {
     
     result = document.getElementById("personInformation");
-    fetch('https://localhost:8085/api/person/')
+    fetch('https://serafina.tk/api/person/')
     .then(response => response.json())
     .then(data => {
         

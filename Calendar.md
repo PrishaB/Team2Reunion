@@ -12,7 +12,7 @@ function isLeapYear(yearparam) {
     result = document.getElementById("isLeapYearResult");
 
     // Fetch data from API
-    fetch('https://hetvitrivedi.tk/api/calendar/isLeapYear/' + yearparam)
+    fetch('https://serafina.tk/api/calendar/isLeapYear/' + yearparam)
     .then(response => response.json())
     .then(data => {
 
@@ -26,7 +26,7 @@ function isLeapYear(yearparam) {
 function firstDayOfYear(yearparam) {
 
     result = document.getElementById("theFirstDayOfYear");
-    fetch('https://localhost:8085/api/calendar/firstDayOfYear/' + yearparam)
+    fetch('https://serafina.tk/api/calendar/firstDayOfYear/' + yearparam)
     .then(response => response.json())
     .then(data => {
         
