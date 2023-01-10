@@ -51,7 +51,7 @@ function firstDayOfYear(yearparam) {
     })
 }
 
-function dayOfYear(monthparam,dayparam,yearparam) {
+function dayOfYear(monthparam, dayparam, yearparam) {
     
     result = document.getElementById("dayOfYear");
 
@@ -67,7 +67,7 @@ function dayOfYear(monthparam,dayparam,yearparam) {
     })
 }
 
-function numberOfLeapYears(yearparam,year2param) {
+function numberOfLeapYears(yearparam, year2param) {
     
     result = document.getElementById("numberOfLeapYears");
 
@@ -115,7 +115,7 @@ function dayOfWeek(monthparam,dayparam, yearparam) {
 <input id="inputYear" placeholder="Input a Year">
 <input id="input month" placeholder="Input a month">
 <input id="input day" placeholder="Input a day">
-<button onclick="dayOfYear(getDay(), getMonth(), getYear())">Submit</button>
+<button onclick="dayOfYear(getMonth(),getDay(), getYear())">Submit</button>
 <p id="dayOfYear"></p>
 
 ### Number of leap years between years
@@ -128,5 +128,5 @@ function dayOfWeek(monthparam,dayparam, yearparam) {
 <input id="inputYear" placeholder="Input a Year">
 <input id="input month" placeholder="Input a month">
 <input id="input day" placeholder="Input a day">
-<button onclick="dayOfWeek(getDay(), getMonth(), getYear())">Submit</button>
+<button onclick="dayOfWeek(getMonth(),getDay(), getYear())">Submit</button>
 <p id="dayOfWeek"></p>
