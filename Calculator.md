@@ -13,9 +13,9 @@
     const urlStart = "https://serafina.tk/api/calculator/";
     const url = urlStart + expression;
 
-    console.log(url); 
+    console.log(url),{"method": "GET"}; 
 
-    fetch(url)
+    fetch(url,{"method": "GET"})
       .then(res => res.json())
       .then(data => {
         console.log(data);
