@@ -7,6 +7,21 @@ function getYear(){
     return inputYear;
 }
 
+function getMonth(){
+    let inputMonth = document.getElementById("inputMonth").value;
+    return inputMonth;
+}
+
+function getDay(){
+    let inputDay = document.getElementById("inputDay").value;
+    return inputDay;
+}
+
+function getYear2(){
+    let inputYear2 = document.getElementById("inputYear2").value;
+    return inputYear2;
+}
+
 function isLeapYear(yearparam) {
     
     result = document.getElementById("isLeapYearResult");
@@ -32,18 +47,86 @@ function firstDayOfYear(yearparam) {
         
         console.log(data);
 
-        result.innerHTML = "The first day of the year" + yearparam + "has the numerical value: " + data.firstDayOfYear;
+        result.innerHTML = "The first day of the year: " + yearparam + "was this day of the week: " + data.firstDayOfYear;
     })
 }
 
+function dayOfYear(monthparam,dayparam,yearparam) {
+    
+    result = document.getElementById("dayOfYear");
+
+    // Fetch data from API
+    fetch('https://serafina.tk/api/calendar/dayOfYear/' + monthparam+ dayparam+yearparam)
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+        result.innerHTML = "What day of the year is the date " + monthparam+ dayparam+ yearparam  + data.dayOfYear;
+
+    })
+}
+
+function numberOfLeapYears(yearparam,year2param) {
+    
+    result = document.getElementById("numberOfLeapYears");
+
+    // Fetch data from API
+    fetch('https://serafina.tk/api/calendar/numberOfLeapYears/' + yearparam+year2param)
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+        result.innerHTML = "How many leap years are between " + yearparam + "and" +year2param + data.numberOfLeapYears;
+
+    })
+}
+
+
+function dayOfWeek(monthparam,dayparam, yearparam) {
+    
+    result = document.getElementById("dayOfWeek");
+
+    // Fetch data from API
+    fetch('https://serafina.tk/api/calendar/dayOfWeek/' +monthparam+ dayparam+yearparam)
+    .then(response => response.json())
+    .then(data => {
+
+        console.log(data);
+
+        result.innerHTML = "What day of the week is the date " + monthparam+ dayparam+ yearparam  +data.dayOfWeek;
+
+    })
+}
 </script>
 
-### Want to know if a year is a leap year? Input a number below and find out!
+### Is this year a leap year?
 <input id="inputYear" placeholder="Input a Year">
 <button onclick="isLeapYear(getYear())">Submit</button>
 <p id="isLeapYearResult"></p>
 
-### Want to know what the first day of a year is? Type in a year and use the guide below to understand what the number you typed in means!
+### The day of week of the first day of Year 
 <input id="inputYear" placeholder="Input a Year">
 <button onclick="firstDayOfYear(getYear())">Submit</button>
 <p id="theFirstDayOfYear"></p>
+
+### Day of Year
+<input id="inputYear" placeholder="Input a Year">
+<input id="input month" placeholder="Input a month">
+<input id="input day" placeholder="Input a day">
+<button onclick="dayOfYear(getDay(), getMonth(), getYear())">Submit</button>
+<p id="dayOfYear"></p>
+
+### Number of leap years between years
+<input id="inputYear" placeholder="Input a Year">
+<input id="inputYear2" placeholder="Input a second Year">
+<button onclick="numberOfLeapYears(getYear(),getYear2())">Submit</button>
+<p id="numberOfLeapYears"></p>
+
+### Day of week
+<input id="inputYear" placeholder="Input a Year">
+<input id="input month" placeholder="Input a month">
+<input id="input day" placeholder="Input a day">
+<button onclick="dayOfWeek(getDay(), getMonth(), getYear())">Submit</button>
+<p id="dayOfWeek"></p>

@@ -4,12 +4,12 @@
 
 <button onclick="calculator()">Enter Equation</button>
 
-<p> The answer to your equation is: <p id="answer"> </p>
+<p> Answer: <p id="answer"> </p>
 
 <script>
   
   function calculator() {
-    let expression = prompt("Enter the equation you'd like to have solved");
+    let expression = prompt("Enter equation");
     const urlStart = "https://serafina.tk/api/calculator/";
     const url = urlStart + expression;
 
@@ -29,13 +29,17 @@
 
 <style> 
 button {
-	width: 120px;
-	height: 40px;
-	font-size: 15px;
-	background-color: #43B4E5;
-	color: #fff;
-	border: none;
-	cursor: pointer;
+background-color: pink;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
 p {
